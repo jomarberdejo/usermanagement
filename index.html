@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bootstrap link for design -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Title of the system -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="alert alert-primary text-center">
+                    User Management
+                </h1>
+            </div>
+             <!-- Form design -->
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+
+                        <form id="form">
+                            <input type="hidden" name="id" id="inputUserId">
+                            <label for="inputFullName">Full Name</label>
+                            <input type="text" placeholder="Full Name" class="form-control" id="inputFullName" required>
+                            <br>
+                            <label for="inputUsername">Username</label>
+                            <input type="text" placeholder="Username" class="form-control" id="inputUsername" required>
+                            <br>
+                            <label for="inputEmail">Email Address</label>
+                            <input type="email" placeholder="Email Address" class="form-control" id="inputEmail" required>
+                            <br>
+                            <label for="inputPhone">Phone Number</label>
+                            <input type="tel" placeholder="Phone Number" class="form-control" id="inputPhone" required>
+                            <br>
+                            <label for="inputRole">Role</label>
+                            <input type="text" placeholder="Role" class="form-control" id="inputRole" required>
+                            <br>
+                            <label for="inputLogins">Number of Logins</label>
+                            <input type="number" placeholder="Number of Logins" class="form-control" id="inputLogins" required>
+                            <br>
+                            <label for="inputDateCreated">Date Created</label>
+                            <input type="date" placeholder="Date Created" class="form-control" id="inputDateCreated" required>
+                            <br>
+                            <button class="btn btn-sm btn-primary" type="button" onclick="save()">Save</button>
+                            <button class="btn btn-sm btn-primary" type="button" onclick="clearData()">Reset</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Table design for user list -->
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                      <h2>User List</h2>
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Full Name</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Role</</th>
+                                        <th>Number of Logins</th>
+                                        <th>Date Created</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table">
+       
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Link for the design -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <!-- Script for fetching data -->
+    <script>
+        allData()
+    </script>
+    <!-- Script for resetting the form -->
+    <script>
+        function clearData(){
+            document.getElementById('form').reset();
+            document.getElementById('inputUserId').value = "";
+        }
+    </script>
+  </body>
+</html>
